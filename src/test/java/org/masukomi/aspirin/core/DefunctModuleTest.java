@@ -2,7 +2,7 @@ package org.masukomi.aspirin.core;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.lang.management.ManagementFactory;
+//import java.lang.management.ManagementFactory;
 import java.util.Properties;
 
 import javax.mail.Address;
@@ -10,8 +10,8 @@ import javax.mail.Session;
 import javax.mail.Message.RecipientType;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.management.MBeanServer;
-import javax.management.ObjectName;
+//import javax.management.MBeanServer;
+//import javax.management.ObjectName;
 
 import org.masukomi.aspirin.Aspirin;
 import org.masukomi.aspirin.core.config.Configuration;
@@ -40,8 +40,8 @@ public class DefunctModuleTest extends TestCase {
 		fms.setSubDirCount(10);
 		config.setMailStore(fms);
 		
-		MBeanServer mbS = ManagementFactory.getPlatformMBeanServer();
-		mbS.registerMBean(config, new ObjectName("org.masukomi.aspirin:type=Configuration"));
+//		MBeanServer mbS = ManagementFactory.getPlatformMBeanServer();
+//		mbS.registerMBean(config, new ObjectName("org.masukomi.aspirin:type=Configuration"));
 
 //		@SuppressWarnings("unused")
 //		Logger logger = Logger.getLogger("MailService");
