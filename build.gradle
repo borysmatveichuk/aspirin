@@ -1,0 +1,110 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "https://maven.java.net/content/groups/public/"
+    }
+//    maven {
+//        url "https://mvnrepository.com/artifact/"
+//    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.sun.mail:android-mail:1.5.5'
+    compile 'com.sun.mail:android-activation:1.5.5'
+    compile 'commons-pool:commons-pool:1.5.5'
+    compile 'dnsjava:dnsjava:2.0.8'
+    compile 'org.slf4j:slf4j-api:1.6.1'
+    // https://mvnrepository.com/artifact/com.oracle/ojdbc14
+    //compile group: 'com.oracle', name: 'ojdbc14', version: '10.2.0.4.0'
+
+/*
+
+<properties>
+    	<javax.activation.version>1.1.1</javax.activation.version>
+    	<commons.pool.version>1.5.5</commons.pool.version>
+    	<dnsjava.version>2.0.8</dnsjava.version>
+    	<javax.mail.version>1.4.2</javax.mail.version>
+    </properties>
+
+
+<dependency>
+          <groupId>javax.activation</groupId>
+          <artifactId>activation</artifactId>
+          <version>${javax.activation.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>commons-pool</groupId>
+          <artifactId>commons-pool</artifactId>
+          <version>${commons.pool.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>dnsjava</groupId>
+          <artifactId>dnsjava</artifactId>
+          <version>${dnsjava.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>javax.mail</groupId>
+          <artifactId>mail</artifactId>
+          <version>${javax.mail.version}</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+        	<version>1.6.1</version>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+		  <groupId>org.jvnet.mock-javamail</groupId>
+		  <artifactId>mock-javamail</artifactId>
+		  <version>1.7</version>
+		  <scope>test</scope>
+		  <exclusions>
+		      <exclusion>
+			      <artifactId>junit</artifactId>
+			      <groupId>junit</groupId>
+		      </exclusion>
+		  </exclusions>
+		</dependency>
+
+    </dependencies>
+ */
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+}
